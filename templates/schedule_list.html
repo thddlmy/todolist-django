@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+
+<div class="container" style='width:1000px;'>
+    <h3>송이's TO DO LIST</h3>
+    {% if schedule_list %}
+        <ul>
+            {% for schedule in schedule_list %}
+            <li>{{schedule.content}}
+                <span>
+                    <a href="{% url 'list:schedule_delete' schedule.id %}" class="delete btn btn-sm btn-outline-secondary">삭제</a>
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>등록된 스케줄이 없습니다.</p>
+    {% endif %}
+    <a href="{% url 'list:schedule_create' %}" class="btn btn-primary">스케줄 등록하기</a>
+</div>
