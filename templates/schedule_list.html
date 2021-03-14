@@ -1,9 +1,9 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-
-<div class="container" style='width:1000px;'>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<div class="container">
     <h3>송이's TO DO LIST</h3>
+    <hr>
     {% if schedule_list %}
         <ul>
             {% for schedule in schedule_list %}
